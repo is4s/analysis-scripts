@@ -1,0 +1,54 @@
+[project]
+name = "analysis-scripts"
+version = "0.1.0"
+description = "A project for various analysis tools."
+dependencies = [
+    "numpy==1.26.4",
+    "scipy>=1.15.2",
+    "matplotlib>=3.9.3",
+    "lcm>=1.5.1,<2",
+    # firehose-outputs main branch - committed 30 January 2026
+    "aspn23 @ git+https://github.com/Open-PNT/firehose-outputs.git@56f06136cdc82002f444a6b895488dce50cb167a#subdirectory=aspn-py",
+    "aspn23_lcm @ git+https://github.com/Open-PNT/firehose-outputs.git@56f06136cdc82002f444a6b895488dce50cb167a#subdirectory=lcm/python",
+    # NavToolkit main branch - committed 9 January 2026
+    "navtk @ git+https://github.com/Open-PNT/NavToolkit.git@46ff2df12ad624f145400273b3ec27551232fdc3",
+    "pyyaml>=6.0.0",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["analysis-lcm", "analysis-ros"]
+
+[tool.uv.sources]
+analysis-lcm = { workspace = true }
+analysis-ros = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "ruff>=0.4.5",
+    "pip>=24.0",
+    "analysis-lcm",
+    "analysis-ros",
+]
+
+[tool.ruff.lint]
+extend-select = ["I"]
+select = ["D", "D213"]
+ignore = ["D212", "D417"]
+
+[tool.ruff.lint.per-file-ignores]
+"analysis-lcm/*" = ["D"]
+"analysis-ros/*" = ["D"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "single"

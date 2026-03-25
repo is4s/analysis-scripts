@@ -1,0 +1,35 @@
+[project]
+name = "analysis-lcm"
+version = "0.1.0"
+description = "Analysis tools for LCM logs."
+dependencies = ["inu==1.1.0", "tabulate>=0.9.0", "tomlkit>=0.13.0", "tqdm"]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/analysis"]
+
+[project.scripts]
+get_imu_rotation = 'analysis.lcm.scripts.get_imu_rotations:main'
+altitude = 'analysis.lcm.scripts.plot_alt:main'
+dt = 'analysis.lcm.scripts.plot_dt:main'
+imu = 'analysis.lcm.scripts.plot_imu:main'
+magnetometer = 'analysis.lcm.scripts.plot_mag:main'
+position = 'analysis.lcm.scripts.plot_pos:main'
+pva = 'analysis.lcm.scripts.plot_pva:main'
+range_rate = 'analysis.lcm.scripts.plot_range_rate_to_point:main'
+speed = 'analysis.lcm.scripts.plot_speed:main'
+timestamps = 'analysis.lcm.scripts.plot_time:main'
+timespan = 'analysis.lcm.scripts.get_time_range:main'
+velocity = 'analysis.lcm.scripts.plot_vel:main'
+print_channels = 'analysis.lcm.scripts.print_channels:main'
+remove_channels = 'analysis.lcm.scripts.remove_channels:main'
+rename_channels = 'analysis.lcm.scripts.rename_channels:main'
+sort_log = 'analysis.lcm.scripts.sort_log_by_time:main'
