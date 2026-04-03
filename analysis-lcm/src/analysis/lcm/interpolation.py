@@ -1,4 +1,6 @@
 import numpy as np
+from numpy import float64
+from numpy.typing import NDArray
 from scipy.interpolate import interp1d, splev, splrep
 from scipy.optimize import minimize_scalar
 
@@ -11,18 +13,18 @@ def interpolate_array(x: np.ndarray, y: np.ndarray, x_interp: np.ndarray):
     )
 
 
-def interpolate_pva(pva1: PvaData, pva2: PvaData) -> PvaData:
-    """Return the result of interpolating pva2 onto pva1 times."""
+def interpolate_pva(time: NDArray[float64], pva2: PvaData) -> PvaData:
+    """Return the result of interpolating pva2 onto time array."""
     out = PvaData(pva2.label)
-    out.time = pva1.time
-    out.llh = interpolate_array(pva2.time, pva2.llh, pva1.time)
-    out.llh_sig = interpolate_array(pva2.time, pva2.llh_sig, pva1.time)
-    out.ned = interpolate_array(pva2.time, pva2.ned, pva1.time)
-    out.ned_sig = interpolate_array(pva2.time, pva2.ned_sig, pva1.time)
-    out.vel = interpolate_array(pva2.time, pva2.vel, pva1.time)
-    out.vel_sig = interpolate_array(pva2.time, pva2.vel_sig, pva1.time)
-    out.rpy = interpolate_array(pva2.time, pva2.rpy, pva1.time)
-    out.tilt_sig = interpolate_array(pva2.time, pva2.tilt_sig, pva1.time)
+    out.time = time
+    out.llh = interpolate_array(pva2.time, pva2.llh, time)
+    out.llh_sig = interpolate_array(pva2.time, pva2.llh_sig, time)
+    out.ned = interpolate_array(pva2.time, pva2.ned, time)
+    out.ned_sig = interpolate_array(pva2.time, pva2.ned_sig, time)
+    out.vel = interpolate_array(pva2.time, pva2.vel, time)
+    out.vel_sig = interpolate_array(pva2.time, pva2.vel_sig, time)
+    out.rpy = interpolate_array(pva2.time, pva2.rpy, time)
+    out.tilt_sig = interpolate_array(pva2.time, pva2.tilt_sig, time)
 
     return out
 

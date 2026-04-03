@@ -97,7 +97,7 @@ def plot_pva(log_data: LogData[PvaData], save=False) -> None:
                 continue
 
             # Calc truth at solution time
-            truth = interpolate_pva(data, pva_data[truth_channel])
+            truth = interpolate_pva(data.time, pva_data[truth_channel])
 
             # Calc solution error
             pos_error = data.ned - truth.ned
