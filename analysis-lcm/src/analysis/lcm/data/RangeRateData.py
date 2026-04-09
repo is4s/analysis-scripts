@@ -1,7 +1,7 @@
 import aspn23_lcm
 import numpy as np
 
-from analysis.lcm.data import Data
+from .Data import Data
 
 
 def get_range_rate(aspn_msg):

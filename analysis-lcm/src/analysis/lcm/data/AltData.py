@@ -1,6 +1,6 @@
 import numpy as np
 
-from analysis.lcm.data import Data
+from .Data import Data
 
 
 class AltData:

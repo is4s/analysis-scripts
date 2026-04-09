@@ -2,7 +2,7 @@ from typing import Generic
 
 from aspn23_xtensor import TypeTimestamp
 
-from analysis.lcm.data import DataType
+from .Data import DataType
 
 
 class LogData(Generic[DataType]):

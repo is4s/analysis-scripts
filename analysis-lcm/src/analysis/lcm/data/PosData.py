@@ -1,7 +1,8 @@
 import numpy as np
 
-from analysis.lcm.data import Data
 from analysis.lcm.measurements import get_pos
+
+from .Data import Data
 
 
 class PosData(Data):
