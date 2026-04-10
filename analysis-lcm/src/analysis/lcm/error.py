@@ -18,5 +18,5 @@ def calc_tilts(rpy1: np.ndarray, rpy2: np.ndarray):
         if np.isnan(rpy1[k]).any() or np.isnan(rpy2[k]).any():
             tilts[k, :] = np.array([np.nan, np.nan, np.nan])
         else:
-            tilts[k, :] = dcm_to_rpy(rpy_to_dcm(rpy1[k, :]).T @ rpy_to_dcm(rpy2[k, :]))
+            tilts[k, :] = dcm_to_rpy(rpy_to_dcm(rpy1[k, :]) @ rpy_to_dcm(rpy2[k, :]).T)
     return tilts
