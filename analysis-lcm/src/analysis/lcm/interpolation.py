@@ -236,3 +236,45 @@ def downsample_imu(
         running_gyro_sum += g
 
     return np.array(out_times), np.array(out_accel), np.array(out_gyro)
+
+
+def sum_imu(times: np.ndarray, accel: np.ndarray, gyro: np.ndarray, Hz: int):
+    """Sum IMU DV/DTH measurements over each second to get accelerations.
+
+    For each window, measurements are summed to obtain a total integrated measurement,
+    given measurement rate in Hz.
+
+    Args:
+        times: Sorted array of timestamps.
+        accel: Nx3 array of DV measurements corresponding to the timestamps in times,
+            where N is the number of time steps.
+        gyro: Nx3 array of DTH measurements corresponding to the timestamps in times,
+            where N is the number of time steps.
+        Hz: IMU measurement rate.
+    """
+    window_start = times[0]
+    running_accel_sum = np.zeros(3)
+    running_gyro_sum = np.zeros(3)
+    out_times = []
+    out_accel = []
+    out_gyro = []
+    num = 0
+    for time, a, g in zip(times, accel, gyro):
+        cur_interval = time - window_start
+
+        running_accel_sum += a
+        running_gyro_sum += g
+        num += 1
+
+        if num == Hz:
+            # Completed window, save off average rate
+            out_times.append(window_start + cur_interval / 2)
+            out_accel.append(running_accel_sum.copy())
+            out_gyro.append(running_gyro_sum.copy())
+            window_start = time
+            running_accel_sum[:] = 0.0
+            running_gyro_sum[:] = 0.0
+
+            num = 0
+
+    return np.array(out_times), np.array(out_accel), np.array(out_gyro)

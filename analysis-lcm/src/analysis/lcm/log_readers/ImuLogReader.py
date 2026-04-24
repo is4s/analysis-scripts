@@ -47,6 +47,8 @@ class ImuLogReader(LogReader[ImuData | PvaData]):
         # Downsample PVAs to 5 Hz. This is necessary to ensure interpolation to a higher
         # frequency is smooth.
         pva_data: PvaData = self.log_data.data[self.log_data.truth_channel]
+        if not len(pva_data.time):
+            return
         desired_dt = 0.2
         avg_dt = np.mean(np.diff(pva_data.time))
         if avg_dt < desired_dt:
