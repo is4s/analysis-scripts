@@ -10,3 +10,6 @@ set -xe
 
 ruff check --fix
 ruff format
+pyproject-fmt pyproject.toml --column-width 88 --indent 4 --keep-full-version
+pyproject-fmt analysis-lcm/pyproject.toml --column-width 88 --indent 4 --keep-full-version
+pyproject-fmt analysis-ros/pyproject.toml --column-width 88 --indent 4 --keep-full-version

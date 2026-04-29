@@ -1,53 +1,58 @@
-[project]
-name = "analysis-lcm"
-version = "0.1.1"
-description = "Analysis tools for LCM logs."
-dependencies = [
-    "inu==1.1.0",
-    "tabulate>=0.9.0",
-    "tomlkit>=0.13.0",
-    "tqdm",
-    "numpy==1.26.4",
-    "scipy>=1.15.2",
-    "matplotlib>=3.9.3",
-    "lcm>=1.5.1,<2",
-    "aspn23",
-    "aspn23_lcm",
-    "navtk",
-    "pyyaml>=6.0.0",
-]
-readme = "README.md"
-requires-python = ">= 3.10"
-
 [build-system]
 build-backend = "uv_build"
 requires = [ "uv-build>=0.11.3,<0.12" ]
 
-[tool.uv.sources]
+[project]
+name = "analysis-lcm"
+version = "0.1.1"
+description = "Analysis tools for LCM logs."
+readme = "README.md"
+authors = [ { name = "IS4S", email = "pntos@is4s.com" } ]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "aspn23",
+    "aspn23-lcm",
+    "inu==1.1.0",
+    "lcm>=1.5.1,<2",
+    "matplotlib>=3.9.3",
+    "navtk",
+    "numpy==1.26.4",
+    "pyyaml>=6.0.0",
+    "scipy>=1.15.2",
+    "tabulate>=0.9.0",
+    "tomlkit>=0.13.0",
+    "tqdm",
+]
+scripts.altitude = "analysis.lcm.scripts.plot_alt:main"
+scripts.dt = "analysis.lcm.scripts.plot_dt:main"
+scripts.get_imu_rotation = "analysis.lcm.scripts.get_imu_rotations:main"
+scripts.imu = "analysis.lcm.scripts.plot_imu:main"
+scripts.magnetometer = "analysis.lcm.scripts.plot_mag:main"
+scripts.position = "analysis.lcm.scripts.plot_pos:main"
+scripts.print_channels = "analysis.lcm.scripts.print_channels:main"
+scripts.pva = "analysis.lcm.scripts.plot_pva:main"
+scripts.range_rate = "analysis.lcm.scripts.plot_range_rate_to_point:main"
+scripts.remove_channels = "analysis.lcm.scripts.remove_channels:main"
+scripts.rename_channels = "analysis.lcm.scripts.rename_channels:main"
+scripts.sort_log = "analysis.lcm.scripts.sort_log_by_time:main"
+scripts.speed = "analysis.lcm.scripts.plot_speed:main"
+scripts.stationary_imu = "analysis.lcm.scripts.plot_stationary_imu:main"
+scripts.timespan = "analysis.lcm.scripts.get_time_range:main"
+scripts.timestamps = "analysis.lcm.scripts.plot_time:main"
+scripts.velocity = "analysis.lcm.scripts.plot_vel:main"
+
+[tool.uv]
 # firehose-outputs main branch - committed 30 January 2026
-aspn23 = { git = "https://github.com/Open-PNT/firehose-outputs.git", rev = "56f06136cdc82002f444a6b895488dce50cb167a", subdirectory="aspn-py" }
-aspn23_lcm = { git = "https://github.com/Open-PNT/firehose-outputs.git", rev = "56f06136cdc82002f444a6b895488dce50cb167a", subdirectory="lcm/python" }
+sources.aspn23 = { git = "https://github.com/Open-PNT/firehose-outputs.git", rev = "56f06136cdc82002f444a6b895488dce50cb167a", subdirectory = "aspn-py" }
+sources.aspn23_lcm = { git = "https://github.com/Open-PNT/firehose-outputs.git", rev = "56f06136cdc82002f444a6b895488dce50cb167a", subdirectory = "lcm/python" }
 # NavToolkit main branch - committed 9 January 2026
-navtk = { git = "https://github.com/is4s/NavToolkit.git", rev = "46ff2df12ad624f145400273b3ec27551232fdc3" }
-
-[tool.uv.build-backend]
-module-name = "analysis.lcm"
-
-[project.scripts]
-get_imu_rotation = 'analysis.lcm.scripts.get_imu_rotations:main'
-altitude = 'analysis.lcm.scripts.plot_alt:main'
-dt = 'analysis.lcm.scripts.plot_dt:main'
-imu = 'analysis.lcm.scripts.plot_imu:main'
-stationary_imu = 'analysis.lcm.scripts.plot_stationary_imu:main'
-magnetometer = 'analysis.lcm.scripts.plot_mag:main'
-position = 'analysis.lcm.scripts.plot_pos:main'
-pva = 'analysis.lcm.scripts.plot_pva:main'
-range_rate = 'analysis.lcm.scripts.plot_range_rate_to_point:main'
-speed = 'analysis.lcm.scripts.plot_speed:main'
-timestamps = 'analysis.lcm.scripts.plot_time:main'
-timespan = 'analysis.lcm.scripts.get_time_range:main'
-velocity = 'analysis.lcm.scripts.plot_vel:main'
-print_channels = 'analysis.lcm.scripts.print_channels:main'
-remove_channels = 'analysis.lcm.scripts.remove_channels:main'
-rename_channels = 'analysis.lcm.scripts.rename_channels:main'
-sort_log = 'analysis.lcm.scripts.sort_log_by_time:main'
+sources.navtk = { git = "https://github.com/is4s/NavToolkit.git", rev = "46ff2df12ad624f145400273b3ec27551232fdc3" }
+build-backend.module-name = "analysis.lcm"

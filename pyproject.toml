@@ -2,43 +2,40 @@
 name = "analysis-scripts"
 version = "0.1.0"
 description = "A project for various analysis tools."
-dependencies = []
 readme = "README.md"
-requires-python = ">= 3.10"
-
-[tool.uv]
-package = false
-
-[tool.uv.workspace]
-members = ["analysis-lcm", "analysis-ros"]
-
-[tool.uv.sources]
-analysis-lcm = { workspace = true }
-analysis-ros = { workspace = true }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = []
 
 [dependency-groups]
 dev = [
-    "ruff>=0.4.5",
-    "pip>=24.0",
     "analysis-lcm",
     "analysis-ros",
+    "pip>=24.0",
+    "pyproject-fmt>=2.7",
+    "ruff>=0.4.5",
     "uv==0.11.3",
 ]
 
-[tool.ruff.lint]
-extend-select = ["I"]
-select = ["D", "D213"]
-ignore = ["D212", "D417"]
+[tool.uv]
+sources.analysis-lcm = { workspace = true }
+sources.analysis-ros = { workspace = true }
+package = false
+workspace.members = [ "analysis-lcm", "analysis-ros" ]
 
-[tool.ruff.lint.per-file-ignores]
-"analysis-lcm/*" = ["D"]
-"analysis-ros/*" = ["D"]
-
-[tool.ruff.lint.isort]
-combine-as-imports = true
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
-
-[tool.ruff.format]
-quote-style = "single"
+[tool.ruff]
+format.quote-style = "single"
+lint.select = [ "D", "D213" ]
+lint.extend-select = [ "I" ]
+lint.ignore = [ "D212", "D417" ]
+lint.per-file-ignores."analysis-lcm/*" = [ "D" ]
+lint.per-file-ignores."analysis-ros/*" = [ "D" ]
+lint.isort.combine-as-imports = true
+lint.pydocstyle.convention = "google"
