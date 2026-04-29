@@ -7,11 +7,10 @@ dependencies = [
     "scipy>=1.15.2",
     "matplotlib>=3.9.3",
     "lcm>=1.5.1,<2",
-    # firehose-outputs main branch - committed 30 January 2026
-    "aspn23 @ git+https://github.com/Open-PNT/firehose-outputs.git@56f06136cdc82002f444a6b895488dce50cb167a#subdirectory=aspn-py",
-    "aspn23_lcm @ git+https://github.com/Open-PNT/firehose-outputs.git@56f06136cdc82002f444a6b895488dce50cb167a#subdirectory=lcm/python",
-    # NavToolkit main branch - committed 9 January 2026
-    "navtk @ git+https://github.com/Open-PNT/NavToolkit.git@46ff2df12ad624f145400273b3ec27551232fdc3",
+    # aspn-generated main branch - committed 21 April 2026
+    "aspn23 @ git+https://github.com/is4s/aspn-generated.git@7e1f35bc84b90c6d361e690601448f8087e1a626#subdirectory=aspn-py",
+    "aspn23_lcm @ git+https://github.com/is4s/aspn-generated.git@7e1f35bc84b90c6d361e690601448f8087e1a626#subdirectory=lcm/python",
+    "navtk",
     "pyyaml>=6.0.0",
 ]
 readme = "README.md"

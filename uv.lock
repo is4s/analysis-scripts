@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '3.11'",
@@ -69,11 +69,11 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aspn23", git = "https://github.com/Open-PNT/firehose-outputs.git?subdirectory=aspn-py&rev=56f06136cdc82002f444a6b895488dce50cb167a" },
-    { name = "aspn23-lcm", git = "https://github.com/Open-PNT/firehose-outputs.git?subdirectory=lcm%2Fpython&rev=56f06136cdc82002f444a6b895488dce50cb167a" },
+    { name = "aspn23", git = "https://github.com/is4s/aspn-generated.git?subdirectory=aspn-py&rev=7e1f35bc84b90c6d361e690601448f8087e1a626" },
+    { name = "aspn23-lcm", git = "https://github.com/is4s/aspn-generated.git?subdirectory=lcm%2Fpython&rev=7e1f35bc84b90c6d361e690601448f8087e1a626" },
     { name = "lcm", specifier = ">=1.5.1,<2" },
     { name = "matplotlib", specifier = ">=3.9.3" },
-    { name = "navtk", git = "https://github.com/Open-PNT/NavToolkit.git?rev=46ff2df12ad624f145400273b3ec27551232fdc3" },
+    { name = "navtk" },
     { name = "numpy", specifier = "==1.26.4" },
     { name = "pyyaml", specifier = ">=6.0.0" },
     { name = "scipy", specifier = ">=1.15.2" },
@@ -90,7 +90,7 @@ dev = [
 [[package]]
 name = "aspn23"
 version = "0.1.0"
-source = { git = "https://github.com/Open-PNT/firehose-outputs.git?subdirectory=aspn-py&rev=56f06136cdc82002f444a6b895488dce50cb167a#56f06136cdc82002f444a6b895488dce50cb167a" }
+source = { git = "https://github.com/is4s/aspn-generated.git?subdirectory=aspn-py&rev=7e1f35bc84b90c6d361e690601448f8087e1a626#7e1f35bc84b90c6d361e690601448f8087e1a626" }
 dependencies = [
     { name = "numpy" },
 ]
@@ -98,7 +98,7 @@ dependencies = [
 [[package]]
 name = "aspn23-lcm"
 version = "0.1.0"
-source = { git = "https://github.com/Open-PNT/firehose-outputs.git?subdirectory=lcm%2Fpython&rev=56f06136cdc82002f444a6b895488dce50cb167a#56f06136cdc82002f444a6b895488dce50cb167a" }
+source = { git = "https://github.com/is4s/aspn-generated.git?subdirectory=lcm%2Fpython&rev=7e1f35bc84b90c6d361e690601448f8087e1a626#7e1f35bc84b90c6d361e690601448f8087e1a626" }
 dependencies = [
     { name = "lcm" },
 ]
@@ -603,10 +603,33 @@ wheels = [
 
 [[package]]
 name = "navtk"
-version = "2.1.0.post4.dev0"
-source = { git = "https://github.com/Open-PNT/NavToolkit.git?rev=46ff2df12ad624f145400273b3ec27551232fdc3#46ff2df12ad624f145400273b3ec27551232fdc3" }
+version = "2.1.0.post6.dev0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a9/3a/f96a8839d9145896d3cf6844e0960bee95f37f1bb64faafe660424bbf054/navtk-2.1.0.post6.dev0.tar.gz", hash = "sha256:9095edccd618fabe8cea96a7d45aab87bddab5aeeae7ad3077157ae864be5e37", size = 760310, upload-time = "2026-04-29T18:42:27.242Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/16/87/416cf6468362ffcd866d7f5611a4d3158c846ef02f650dc41e0def57a738/navtk-2.1.0.post6.dev0-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:cf969113a131c5d1f02f3a2a0be177007b428776b16bc03c183189e3f0b1629f", size = 8031369, upload-time = "2026-04-29T18:41:17.405Z" },
+    { url = "https://files.pythonhosted.org/packages/76/ce/621a5f4e8c1d8f9cb2767b843b7c4f8fc2ce2af25f2e34302c880cefe5eb/navtk-2.1.0.post6.dev0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:d5219ce811ff05edfd591dbfcac044e682dbd39b838f5681d6ab979d5dfdb97c", size = 14560688, upload-time = "2026-04-29T18:41:19.649Z" },
+    { url = "https://files.pythonhosted.org/packages/69/cd/15e7d13aeda8cbe4cda6aada17ca039d2ad6370505c3ef70725bb7479814/navtk-2.1.0.post6.dev0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:464c471a8734944c514914e30a592f78891340063aba55820727fa93a68d82e2", size = 22118156, upload-time = "2026-04-29T18:41:22.096Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/9a/1d71a1685ac240deb4afbd33d8c608d40e53adf2bd09b9402d948a42d69a/navtk-2.1.0.post6.dev0-cp310-cp310-manylinux_2_31_armv7l.whl", hash = "sha256:01ec105289002747801cda2811444710313a21c99d19e00627c9d0e1403a281c", size = 11700425, upload-time = "2026-04-29T18:41:24.599Z" },
+    { url = "https://files.pythonhosted.org/packages/56/e3/204068d0667d321fae868c467524520e54b14b3ea1dc2efb4a21adbd54db/navtk-2.1.0.post6.dev0-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:d88e2057017d4eb4d386b862e0d027ae669897106524dcffbcbaedb80cf6fd04", size = 8045466, upload-time = "2026-04-29T18:41:26.77Z" },
+    { url = "https://files.pythonhosted.org/packages/d1/7f/2859965b999f373dfec5bfd322c2f6e5d0bb4472d3ecf8db32f3a43dd3b7/navtk-2.1.0.post6.dev0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:53c272598a05163313474ecc91223a8b47fd60dae0cd9290eba7ec0c55b19661", size = 14647995, upload-time = "2026-04-29T18:41:28.896Z" },
+    { url = "https://files.pythonhosted.org/packages/74/80/3f1732aea84abf7614642845bc64a2a8e5e7bddddd0d3ecec9aa21c61a0b/navtk-2.1.0.post6.dev0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:6226c82d3f67915a798835d5d41ad8e25e29dcb7b31a12486c02a269ab47149c", size = 22197910, upload-time = "2026-04-29T18:41:31.571Z" },
+    { url = "https://files.pythonhosted.org/packages/69/b1/139a318692036811393a8e3782bbce45c68ac9398034c8a448ad92d79266/navtk-2.1.0.post6.dev0-cp311-cp311-manylinux_2_31_armv7l.whl", hash = "sha256:d8a8ff931bc9d686ff53e5311e5a763bc3e2ea6050613dee2a58c98a347232c2", size = 11707767, upload-time = "2026-04-29T18:41:33.987Z" },
+    { url = "https://files.pythonhosted.org/packages/80/62/17e242f59eec89390830a79c7ebe834594645efa18fee8212f04f93199f9/navtk-2.1.0.post6.dev0-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:361fba6337bddc38e6748cce5ca06b813d771febe55028b7228575c396ebeb96", size = 8095264, upload-time = "2026-04-29T18:41:36.02Z" },
+    { url = "https://files.pythonhosted.org/packages/45/53/d235e6f4449dfaa272f9f70ff25b196d2ce93adeee2eb35e52ba32f7147d/navtk-2.1.0.post6.dev0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:6cd640e3ec80bd6d8fda8ac307c92e34f15b0207dd607e30dc052d9f309d8d47", size = 14650600, upload-time = "2026-04-29T18:41:37.729Z" },
+    { url = "https://files.pythonhosted.org/packages/22/19/1a28530b58fd020101cf545df36d6d4cd3b4e7c8ad2a617eccacb9c07884/navtk-2.1.0.post6.dev0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d1ef09849ccae20514d606ef0dcdfde382b6b5f8260c8cc2527dc9fffc1f78d0", size = 22336169, upload-time = "2026-04-29T18:41:39.947Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/e2/02e585e54680f6b061364d30062540c88c40f7d3b3859d8b7752132db488/navtk-2.1.0.post6.dev0-cp312-cp312-manylinux_2_31_armv7l.whl", hash = "sha256:c5d0ca7d03ed95400ed59370d5f00a57218b4bb4bf18dfcf71877dfa86918258", size = 11726047, upload-time = "2026-04-29T18:41:41.987Z" },
+    { url = "https://files.pythonhosted.org/packages/31/7f/754ac65b7924e5b79f404e04c2d4a246e9977e3e0f6ffd85ca5b7d74d315/navtk-2.1.0.post6.dev0-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:ad0f2285c4805d8e87bfc2773365b401d47902e3127038d22bf98cef1900bc49", size = 8094167, upload-time = "2026-04-29T18:41:43.898Z" },
+    { url = "https://files.pythonhosted.org/packages/2a/bb/a503207102eebcb54760baed67a1d7695e1674d2bcbd3519ad2f8d5cf2fa/navtk-2.1.0.post6.dev0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:2d34e61531729bc238dbade00943e82effec92a9d26edab1d7fee1279be30514", size = 14677610, upload-time = "2026-04-29T18:41:45.936Z" },
+    { url = "https://files.pythonhosted.org/packages/1a/77/81db8876e3b48e3fde0a5cd1e1db72f1186812c6c3968590b76cd46e2393/navtk-2.1.0.post6.dev0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:aeb4aa49a33a510660d2a6123b01d589af07b94e68914ed6a99f563781b23942", size = 22356038, upload-time = "2026-04-29T18:41:49.019Z" },
+    { url = "https://files.pythonhosted.org/packages/60/9c/5fac99c15a1289306aff64c9a8b59701be219975739c74792ccb720870bf/navtk-2.1.0.post6.dev0-cp313-cp313-manylinux_2_31_armv7l.whl", hash = "sha256:829267648b88f74838d58cce6b5f23c2a06d084a398e71501a5cd656f9b70fed", size = 11732856, upload-time = "2026-04-29T18:41:51.658Z" },
+    { url = "https://files.pythonhosted.org/packages/2b/e6/580b716998ee8633b875cd67123f391603c34552f1bd9bc7f9415d90dc99/navtk-2.1.0.post6.dev0-cp314-cp314-macosx_14_0_arm64.whl", hash = "sha256:0788d404c41542d887597f0691b77c83f882fe16f9965e53e7c3b806cc20c833", size = 8063569, upload-time = "2026-04-29T18:41:53.801Z" },
+    { url = "https://files.pythonhosted.org/packages/f8/93/5f72432d6d48eb1dcbee0944aace24878c5ea11105a438c1234b6543d7d5/navtk-2.1.0.post6.dev0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:41cde008ef205fdec2cc9348a6998972dde9e335af6fc4eec875155622b687dd", size = 14710181, upload-time = "2026-04-29T18:41:56.287Z" },
+    { url = "https://files.pythonhosted.org/packages/df/69/644b0ed49adf35122c700dc99e64e91eefeefcd63c61b74f6717bfd309c3/navtk-2.1.0.post6.dev0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:73502e301d0c048d9f29a5e40a22ca970e98f4e54954028d507a5ab7d4b82d80", size = 22357686, upload-time = "2026-04-29T18:41:58.878Z" },
+    { url = "https://files.pythonhosted.org/packages/17/b8/dc57a05e1b82482f77735d7752c29cdccd4c2f793e8c498a1159c4030538/navtk-2.1.0.post6.dev0-cp314-cp314-manylinux_2_31_armv7l.whl", hash = "sha256:7c84d48b8dc67ac43534bc770a53dbd5cfbb0b4eb8e5ff78d01094f8505979fe", size = 11727826, upload-time = "2026-04-29T18:42:02.14Z" },
 ]
 
 [[package]]
