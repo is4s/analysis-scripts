@@ -7,14 +7,12 @@ readme = "README.md"
 requires-python = ">= 3.10"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+build-backend = "uv_build"
+requires = [ "uv-build>=0.11.3,<0.12" ]
 
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/analysis"]
+[tool.uv.build-backend]
+module-name = "analysis.ros"
 
 [project.scripts]
 lcm_to_ros = 'analysis.ros.convert_log_to_ros:main'
+
