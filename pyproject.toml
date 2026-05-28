@@ -29,6 +29,12 @@ dev = [
 [tool.uv]
 sources.analysis-lcm = { workspace = true }
 sources.analysis-ros = { workspace = true }
+# While pypi is default index, this enables wheels to be published via:
+#   uv publish --index pypi --username __token__
+# Provided you have pypi credentials saved via `uv auth login`
+index = [
+    { name = "pypi", url = "https://pypi.org/simple", publish-url = "https://pypi.org" }
+]
 package = false
 workspace.members = [ "analysis-lcm", "analysis-ros" ]
 
