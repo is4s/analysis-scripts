@@ -2,6 +2,7 @@ import os
 import time
 
 from aspn23_xtensor import TypeTimestamp, to_seconds
+
 from lcm import Event, EventLog
 
 from .measurements import Aspn23Measurement, decode_aspn_lcm_msg
@@ -13,9 +14,7 @@ def sort_log(logfile: str) -> None:
     start = time.time()
 
     # Collect all measurements into sorted list
-    measurements: list[
-        tuple[TypeTimestamp, str, int, Aspn23Measurement]
-    ] = []
+    measurements: list[tuple[TypeTimestamp, str, int, Aspn23Measurement]] = []
 
     print('Reading measurements from input log...')
     msg: Event

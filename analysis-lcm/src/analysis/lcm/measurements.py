@@ -7,12 +7,13 @@ import aspn23
 import aspn23_lcm
 import numpy as np
 from aspn23_xtensor import TypeTimestamp, to_type_timestamp
-from lcm import Event
 from navtk.navutils import (
     quat_to_dcm,
     quat_to_rpy,
     rpy_to_dcm,
 )
+
+from lcm import Event
 
 from .conversions import pressure_to_alt
 

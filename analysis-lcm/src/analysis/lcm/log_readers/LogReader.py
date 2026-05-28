@@ -1,12 +1,12 @@
 from abc import ABC
 from typing import Generic
 
-from lcm import Event, EventLog
+from analysis.lcm.data import DataType, LogData
+from analysis.lcm.measurements import decode_aspn_lcm_msg, is_type
 from tomlkit.toml_file import TOMLDocument, TOMLFile
 from tqdm import tqdm
 
-from analysis.lcm.data import DataType, LogData
-from analysis.lcm.measurements import decode_aspn_lcm_msg, is_type
+from lcm import Event, EventLog
 
 
 class LogReader(ABC, Generic[DataType]):

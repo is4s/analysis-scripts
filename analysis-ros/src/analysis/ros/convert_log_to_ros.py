@@ -4,12 +4,11 @@ import shutil
 from contextlib import suppress
 
 import rosbag2_py
+from analysis.lcm.measurements import decode_aspn_lcm_msg
 from aspn23_lcm import LcmMsg, from_lcm_map
 from aspn23_ros_utils.ros_translations import to_ros_map
 from lcm import Event, EventLog
 from rclpy.serialization import serialize_message
-
-from analysis.lcm.measurements import decode_aspn_lcm_msg
 
 
 def convert_log_to_ros(logfile: str) -> None:

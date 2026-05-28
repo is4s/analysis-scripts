@@ -1,7 +1,6 @@
 from typing import Any
 
 import aspn23_lcm
-
 from analysis.lcm.config import CONFIG_FILE
 from analysis.lcm.data import *
 
@@ -20,17 +19,13 @@ data_type_to_aspn_type: dict[type[DataType], tuple[Any, ...]] = {
         aspn23_lcm.measurement_position,
         aspn23_lcm.measurement_position_velocity_attitude,
     ),
-    ImuData: (
-        aspn23_lcm.measurement_IMU,
-    ),
+    ImuData: (aspn23_lcm.measurement_IMU,),
     PosData: (
         aspn23_lcm.measurement_position,
         aspn23_lcm.measurement_position_velocity_attitude,
     ),
     RangeRateData: (aspn23_lcm.measurement_range_rate_to_point),
-    PvaData: (
-        aspn23_lcm.measurement_position_velocity_attitude,
-    ),
+    PvaData: (aspn23_lcm.measurement_position_velocity_attitude,),
     SpeedData: (
         aspn23_lcm.measurement_speed,
         aspn23_lcm.measurement_velocity,

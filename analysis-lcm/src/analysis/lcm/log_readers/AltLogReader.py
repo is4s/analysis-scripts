@@ -1,9 +1,8 @@
 import numpy as np
-from aspn23_lcm import measurement_barometer
-from aspn23_xtensor import to_seconds
-
 from analysis.lcm.data import AltData, DataType
 from analysis.lcm.measurements import get_altitude, get_temp
+from aspn23_lcm import measurement_barometer
+from aspn23_xtensor import to_seconds
 
 from .LogReader import LogReader
 

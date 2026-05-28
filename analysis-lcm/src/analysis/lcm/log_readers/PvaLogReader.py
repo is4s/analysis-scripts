@@ -1,9 +1,8 @@
 import numpy as np
+from analysis.lcm.data import PvaData
 from aspn23_xtensor import to_seconds
 from numpy import float64
 from numpy.typing import NDArray
-
-from analysis.lcm.data import PvaData
 
 from .LogReader import LogReader
 

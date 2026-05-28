@@ -217,9 +217,7 @@ def calc_mag_heading(data: MagData, config: dict):
 def plot_mag(logfile: str, extract_all: bool, calibrate: bool) -> None:
     log_reader = MagLogReader(
         logfile,
-        (
-            measurement_magnetic_field,
-        ),
+        (measurement_magnetic_field,),
         extract_all,
         CONFIG_FILE,
     )

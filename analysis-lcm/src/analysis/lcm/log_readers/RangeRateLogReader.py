@@ -1,7 +1,6 @@
 import numpy as np
-from aspn23_xtensor import to_seconds
-
 from analysis.lcm.data import RangeRateData, VelData
+from aspn23_xtensor import to_seconds
 
 from .LogReader import LogReader
 

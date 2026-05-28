@@ -1,8 +1,7 @@
 import numpy as np
-from aspn23_xtensor import to_seconds
-
 from analysis.lcm.conversions import llh_to_ned
 from analysis.lcm.data import PosData
+from aspn23_xtensor import to_seconds
 
 from .LogReader import LogReader
 

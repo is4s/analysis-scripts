@@ -1,5 +1,4 @@
 import numpy as np
-
 from analysis.lcm.measurements import get_speed
 
 from .Data import Data

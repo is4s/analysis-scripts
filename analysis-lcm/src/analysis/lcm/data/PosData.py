@@ -1,5 +1,4 @@
 import numpy as np
-
 from analysis.lcm.measurements import get_pos
 
 from .Data import Data

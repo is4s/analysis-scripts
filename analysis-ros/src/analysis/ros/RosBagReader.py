@@ -1,8 +1,7 @@
 import numpy as np
+from analysis.lcm.data import LogData, PvaData
 from aspn23 import MeasurementPositionVelocityAttitude as Pva
 from aspn23_xtensor import TypeTimestamp, to_seconds
-
-from analysis.lcm.data import LogData, PvaData
 
 try:
     from aspn23_ros_interfaces.msg import MeasurementPositionVelocityAttitude as RosPva
