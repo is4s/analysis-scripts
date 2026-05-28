@@ -52,7 +52,4 @@ scripts.timestamps = "analysis.lcm.scripts.plot_time:main"
 scripts.velocity = "analysis.lcm.scripts.plot_vel:main"
 
 [tool.uv]
-# aspn-generated main branch - committed 21 April 2026
-sources.aspn23 = { git = "https://github.com/is4s/aspn-generated.git", rev = "7e1f35bc84b90c6d361e690601448f8087e1a626", subdirectory = "aspn-py" }
-sources.aspn23_lcm = { git = "https://github.com/is4s/aspn-generated.git", rev = "7e1f35bc84b90c6d361e690601448f8087e1a626", subdirectory = "lcm/python" }
 build-backend.module-name = "analysis.lcm"

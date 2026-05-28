@@ -3,9 +3,9 @@
 -e ./analysis-lcm
     # via analysis-ros
 -e ./analysis-ros
-aspn23 @ git+https://github.com/is4s/aspn-generated.git@7e1f35bc84b90c6d361e690601448f8087e1a626#subdirectory=aspn-py
+aspn23==0.1.0
     # via analysis-lcm
-aspn23-lcm @ git+https://github.com/is4s/aspn-generated.git@7e1f35bc84b90c6d361e690601448f8087e1a626#subdirectory=lcm/python
+aspn23-lcm==0.1.0
     # via analysis-lcm
 colorama==0.4.6 ; sys_platform == 'win32'
     # via tqdm

@@ -15,7 +15,7 @@ members = [
 
 [[package]]
 name = "analysis-lcm"
-version = "0.1.1"
+version = "0.1.2"
 source = { editable = "analysis-lcm" }
 dependencies = [
     { name = "aspn23" },
@@ -35,8 +35,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aspn23", git = "https://github.com/is4s/aspn-generated.git?subdirectory=aspn-py&rev=7e1f35bc84b90c6d361e690601448f8087e1a626" },
-    { name = "aspn23-lcm", git = "https://github.com/is4s/aspn-generated.git?subdirectory=lcm%2Fpython&rev=7e1f35bc84b90c6d361e690601448f8087e1a626" },
+    { name = "aspn23" },
+    { name = "aspn23-lcm" },
     { name = "inu", specifier = "==1.1.0" },
     { name = "lcm", specifier = ">=1.5.1,<2" },
     { name = "matplotlib", specifier = ">=3.9.3" },
@@ -90,17 +90,23 @@ dev = [
 [[package]]
 name = "aspn23"
 version = "0.1.0"
-source = { git = "https://github.com/is4s/aspn-generated.git?subdirectory=aspn-py&rev=7e1f35bc84b90c6d361e690601448f8087e1a626#7e1f35bc84b90c6d361e690601448f8087e1a626" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d3/5b/e3be529d59f33a8d4065bbb49f397605a0b0c0c5dbea3914a3193a3f6e55/aspn23-0.1.0-py3-none-any.whl", hash = "sha256:b5031337057a187831da72c392c64f8b62cab497e0c265504b949452b0a5dfa4", size = 86127, upload-time = "2026-05-27T20:49:03.497Z" },
 ]
 
 [[package]]
 name = "aspn23-lcm"
 version = "0.1.0"
-source = { git = "https://github.com/is4s/aspn-generated.git?subdirectory=lcm%2Fpython&rev=7e1f35bc84b90c6d361e690601448f8087e1a626#7e1f35bc84b90c6d361e690601448f8087e1a626" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lcm" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/29/f5/e8a1abf91e6c7d25582ca0d467cc287c1000f8ed61ce81161c93214d85de/aspn23_lcm-0.1.0-py3-none-any.whl", hash = "sha256:ddaef5ce110c077b36b85c5c964d55db967a535a47756a845bdc81b08055a11a", size = 154328, upload-time = "2026-05-27T20:50:21.292Z" },
 ]
 
 [[package]]
