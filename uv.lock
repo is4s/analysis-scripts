@@ -41,7 +41,7 @@ requires-dist = [
     { name = "lcm", specifier = ">=1.5.1,<2" },
     { name = "matplotlib", specifier = ">=3.9.3" },
     { name = "navtk" },
-    { name = "numpy", specifier = "==1.26.4" },
+    { name = "numpy" },
     { name = "pyyaml", specifier = ">=6.0.0" },
     { name = "scipy", specifier = ">=1.15.2" },
     { name = "tabulate", specifier = ">=0.9.0" },
