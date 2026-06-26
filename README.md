@@ -8,7 +8,7 @@ Make sure that you have **at least `python3.10`** installed. The two supported w
 
 > [!NOTE]
 > ROS and ASPN-ROS can't be `pip install`ed. If using ROS-related scripts, see
-> `analysis-ros/README.md` for instructions on setting up the ROS and ASPN-ROS
+> `navanalysis-ros/README.md` for instructions on setting up the ROS and ASPN-ROS
 > environment.
 
 ### Standard pip Workflow
@@ -91,7 +91,7 @@ You can view a detailed code coverage report from the `index.html` in the `htmlc
 
 uv allows us to manage this repository as a monorepo. We have a few base folders which act as our modules, and one folder that defines applications which use those modules.
 
-Whenever you type `uv sync` it recurses into every `analysis-*` folder and finds the `pyproject.toml` in there. It then installs the `dependencies` subkey in that file, and places them in the top level `uv.lock`. Generating the requirements.txt and requirements-dev.txt is then done as a
+Whenever you type `uv sync` it recurses into every `navanalysis-*` folder and finds the `pyproject.toml` in there. It then installs the `dependencies` subkey in that file, and places them in the top level `uv.lock`. Generating the requirements.txt and requirements-dev.txt is then done as a
 separate step, by running:
 
 ```shell

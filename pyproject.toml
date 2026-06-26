@@ -18,8 +18,8 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-    "analysis-lcm",
-    "analysis-ros",
+    "navanalysis-lcm",
+    "navanalysis-ros",
     "pip>=24.0",
     "pyproject-fmt>=2.7",
     "ruff>=0.4.5",
@@ -27,8 +27,8 @@ dev = [
 ]
 
 [tool.uv]
-sources.analysis-lcm = { workspace = true }
-sources.analysis-ros = { workspace = true }
+sources.navanalysis-lcm = { workspace = true }
+sources.navanalysis-ros = { workspace = true }
 # While pypi is default index, this enables wheels to be published via:
 #   uv publish --index pypi --username __token__
 # Provided you have pypi credentials saved via `uv auth login`
@@ -36,14 +36,14 @@ index = [
     { name = "pypi", url = "https://pypi.org/simple", publish-url = "https://pypi.org" }
 ]
 package = false
-workspace.members = [ "analysis-lcm", "analysis-ros" ]
+workspace.members = [ "navanalysis-lcm", "navanalysis-ros" ]
 
 [tool.ruff]
 format.quote-style = "single"
 lint.select = [ "D", "D213" ]
 lint.extend-select = [ "I" ]
 lint.ignore = [ "D212", "D417" ]
-lint.per-file-ignores."analysis-lcm/*" = [ "D" ]
-lint.per-file-ignores."analysis-ros/*" = [ "D" ]
+lint.per-file-ignores."navanalysis-lcm/*" = [ "D" ]
+lint.per-file-ignores."navanalysis-ros/*" = [ "D" ]
 lint.isort.combine-as-imports = true
 lint.pydocstyle.convention = "google"
