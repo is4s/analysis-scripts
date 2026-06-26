@@ -4,7 +4,7 @@ requires = [ "uv-build>=0.11.3,<0.12" ]
 
 [project]
 name = "navanalysis-ros"
-version = "0.1.1"
+version = "0.1.2"
 description = "Analysis tools for ROS logs."
 readme = "README.md"
 license = "Apache-2.0"

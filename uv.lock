@@ -562,7 +562,7 @@ dev = [
 
 [[package]]
 name = "navanalysis-lcm"
-version = "0.1.4"
+version = "0.1.5"
 source = { editable = "navanalysis-lcm" }
 dependencies = [
     { name = "aspn23" },
@@ -598,7 +598,7 @@ requires-dist = [
 
 [[package]]
 name = "navanalysis-ros"
-version = "0.1.1"
+version = "0.1.2"
 source = { editable = "navanalysis-ros" }
 dependencies = [
     { name = "navanalysis-lcm" },
