@@ -10,7 +10,7 @@ resolution-markers = [
 members = [
     "analysis-lcm",
     "analysis-ros",
-    "analysis-scripts",
+    "nav-analysis",
 ]
 
 [[package]]
@@ -61,7 +61,7 @@ dependencies = [
 requires-dist = [{ name = "analysis-lcm", editable = "analysis-lcm" }]
 
 [[package]]
-name = "analysis-scripts"
+name = "nav-analysis"
 version = "0.1.0"
 source = { virtual = "." }
 

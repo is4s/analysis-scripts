@@ -1,5 +1,5 @@
 [project]
-name = "analysis-scripts"
+name = "nav-analysis"
 version = "0.1.0"
 description = "A project for various analysis tools."
 readme = "README.md"

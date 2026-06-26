@@ -1,6 +1,6 @@
-# Analysis Scripts
+# Nav Analysis
 
-General project to hold a variety of analysis tools for filtering, plotting, etc.
+General project to hold a variety of PNT analysis tools for filtering, plotting, etc.
 
 ## Environment Setup
 
@@ -16,7 +16,7 @@ Make sure that you have **at least `python3.10`** installed. The two supported w
 Begin by creating and entering a clean venv. We can create the venv in the
 `.venv` folder by running the following command in the project root directory:
 
-    python3 -m venv .venv --prompt analysis-scripts
+    python3 -m venv .venv --prompt nav-analysis
 
 Next, enter the venv. The steps to do this vary depending on your shell:
 

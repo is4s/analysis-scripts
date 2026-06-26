@@ -20,7 +20,7 @@ except ImportError as e:
     ) from e
 
 
-# TODO: move this into analysis-scripts
+# TODO: move this into nav-analysis
 class RosBagReader:
     def __init__(self, bagfile: str):
         if bagfile.endswith('.db3'):
